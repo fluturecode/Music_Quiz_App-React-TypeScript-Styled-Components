@@ -1,14 +1,20 @@
+import * as Sentry from "@sentry/react"
+import { Integrations } from "@sentry/tracing"
 import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
 
-ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
-	document.getElementById("root")
-)
+Sentry.init({
+	dsn:
+		"https://5eaa95adbb5d4628abeb9d52550aef73@o517563.ingest.sentry.io/5625548",
+	integrations: [new Integrations.BrowserTracing()],
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+	// We recommend adjusting this value in production, or using tracesSampler
+	// for finer control
+	tracesSampleRate: 0.8,
+})
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+// Can also use with React Concurrent Mode
+// ReactDOM.createRoot(document.getElementById('root')).render(<App />);
