@@ -1,3 +1,4 @@
+import * as Sentry from "@sentry/react"
 import React, { useState } from "react"
 import { Difficulty, fetchQuizQuestions, QuestionState } from "./API"
 import { GlobalStyle, Wrapper } from "./App.styles"
@@ -101,4 +102,4 @@ const App = () => {
 	)
 }
 
-export default App
+export default Sentry.withProfiler(App)
