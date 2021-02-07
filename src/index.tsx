@@ -6,7 +6,7 @@ import App from "./App"
 
 Sentry.init({
 	dsn:
-		"https://5eaa95adbb5d4628abeb9d52550aef73@o517563.ingest.sentry.io/5625548",
+		"https://e080e9ddc1b54d8c8ec1f9d9ecb5f180@o517563.ingest.sentry.io/5626934",
 	integrations: [new Integrations.BrowserTracing()],
 
 	// We recommend adjusting this value in production, or using tracesSampler
